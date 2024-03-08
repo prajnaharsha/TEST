@@ -39,6 +39,8 @@ else
 @code {
     private WeatherForecast[]? forecasts;
 
+    private string _name;
+
     protected override async Task OnInitializedAsync()
     {
         // Simulate asynchronous loading to demonstrate streaming rendering
@@ -52,6 +54,9 @@ else
             TemperatureC = Random.Shared.Next(-20, 55),
             Summary = summaries[Random.Shared.Next(summaries.Length)]
         }).ToArray();
+
+        // Example of a potential null reference exception
+        var length = _name.Length; // This might throw a NullReferenceException if _name is null
     }
 
     private class WeatherForecast
