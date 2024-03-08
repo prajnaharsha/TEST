@@ -25,4 +25,22 @@
         int test;
 
     }
+
+    public void InfiniteLoop()
+    {
+        while (true)
+        {
+            // Do something...
+        }
+    }
+
+    public string GetFullName(string firstName, string lastName)
+    {
+        string fullName=string.Empty;
+        if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
+        {
+            fullName = $"{firstName} {lastName}";
+        }
+        return fullName; // Potential null reference exception if firstName or lastName is null
+    }
 }
